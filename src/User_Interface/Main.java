@@ -1,12 +1,11 @@
 package User_Interface;
 
+import Inference.Shift_planner;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import javax.xml.crypto.Data;
 
 import Data.DataLoader;
 
@@ -16,6 +15,8 @@ import Data.DataLoader;
  * @version 1.0
  */
 public class Main extends Application {
+
+    public Shift_planner planovac = new Shift_planner();
 
     /**
      * Start GUI

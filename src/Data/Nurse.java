@@ -1,5 +1,7 @@
 package Data;
 
+import java.util.LinkedList;
+
 /**
  * Trida pro reprezentaci zdravotni sestry
  * @author Jan Rubas
@@ -17,6 +19,7 @@ public class Nurse {
     /** Pracoviste **/
     public Department dep;
 
+    public LinkedList<NurseShift> smeny;
 
     public Nurse(int ID, String name, String lastName, Department dep) {
         this.ID = ID;

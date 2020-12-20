@@ -30,4 +30,8 @@ public class Department {
     public int getMinCapacity() {
         return minCapacity;
     }
+
+    public int getID() {
+        return id;
+    }
 }

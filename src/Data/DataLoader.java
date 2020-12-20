@@ -14,8 +14,8 @@ import java.util.List;
 
 public class DataLoader {
 
-    public List<Department> departments = new ArrayList<Department>();
-    public List<Nurse> nurses = new ArrayList<Nurse>();
+    public static List<Department> departments = new ArrayList<Department>();
+    public static List<Nurse> nurses = new ArrayList<Nurse>();
 
     public void loadData(){
         readDepartments();
