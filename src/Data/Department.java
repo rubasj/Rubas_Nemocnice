@@ -7,25 +7,24 @@ package Data;
  */
 public class Department {
 
+    /** ID oddeleni **/
     public int id;
+
+    /** Nazev oddeleni **/
     public String name;
-    public int maxCapacity;
+
+
     public int minCapacity;
 
 
-    public Department(int id, String name, int maxCapacity, int minCapacity) {
+    public Department(int id, String name, int minCapacity) {
         this.id = id;
         this.name = name;
-        this.maxCapacity = maxCapacity;
         this.minCapacity = minCapacity;
     }
 
     public String getName() {
         return name;
-    }
-
-    public int getMaxCapacity() {
-        return maxCapacity;
     }
 
     public int getMinCapacity() {

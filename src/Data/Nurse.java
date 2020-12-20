@@ -8,24 +8,24 @@ package Data;
 
 public class Nurse {
 
+    /** ID sestry **/
     public int ID;
+    /** Krestni jmeno **/
     public String name;
+    /** Prijmeni **/
     public String lastName;
+    /** Pracoviste **/
     public Department dep;
-    public String status;
 
 
-    public Nurse(int ID, String name, String lastName, Department dep, String status) {
+    public Nurse(int ID, String name, String lastName, Department dep) {
         this.ID = ID;
         this.name = name;
         this.lastName = lastName;
         this.dep = dep;
-        this.status = status;
+
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public String getName() {
         return name;
@@ -39,7 +39,13 @@ public class Nurse {
         return dep;
     }
 
-    public String getStatus() {
-        return status;
+    @Override
+    public String toString() {
+        return "Nurse{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dep=" + dep.getName() +
+                '}';
     }
 }
