@@ -12,20 +12,42 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Trida pro nacitani dat
+ * @author Jan Rubáš
+ * @version 1.1.
+ */
 public class DataLoader {
 
+    /**
+     * Seznam oddeleni
+     */
     public static List<Department> departments = new ArrayList<Department>();
+
+    /**
+     * Seznam sestricek
+     */
     public static List<Nurse> nurses = new ArrayList<Nurse>();
 
+    /**
+     * Metoda pro nacteni dat, ktera je volana z GUI, popr Mainu
+     */
     public void loadData(){
         readDepartments();
         readNurses();
     }
 
+    /**
+     * Metoda pro nacteni zdravotnich sester
+     */
     private void readNurses() {
         loadFile(Paths.get("Nurse_Data.csv"));
     }
 
+    /**
+     * Obecna metoda, ktera obsahuje nacteni jednotlivych souboru.
+     * @param filePath
+     */
     private void loadFile(Path filePath) {
         try (BufferedReader br = Files.newBufferedReader(filePath.toAbsolutePath(),
                 StandardCharsets.UTF_8)) {
@@ -46,15 +68,23 @@ public class DataLoader {
         }
     }
 
+    /**
+     * Zjisteni oddeleni, kam patri zdravotni sestra
+     * @param dep oddeleni ve string
+     * @return konkretni oddeleni
+     */
     private Department findDepartment(String dep) {
         for(Department d:departments) {
             if (d.name.equals(dep)){
                 return  d;
             }
         }
-        return new Department(0, "Chyba nacteni Oddeleni", 100);
+        return new Department(0, "Chyba nacteni Oddeleni", 100); // pokud dojde k nejake chybe pri nacitani, i kdyz asi nedojde
     }
 
+    /**
+     * Nacitani jednotlivych oddeleni
+     */
     private void readDepartments(){
         loadFile(Paths.get("Department_Data.csv"));
     }

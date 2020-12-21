@@ -73,4 +73,14 @@ public class Department {
     public int getID() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "nurseQueue=" + nurseQueue +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", minCapacity=" + minCapacity +
+                '}';
+    }
 }

@@ -19,36 +19,58 @@ public class Nurse {
     /** Pracoviste **/
     public Department dep;
 
-    public LinkedList<NurseShift> smeny;
+    /** seznam smen */
+    public LinkedList<NurseShift> shifts;
 
+    /**
+     * Konstruktor tridy
+     * @param ID id sestry
+     * @param name krestni jmeno
+     * @param lastName prijmeni
+     * @param dep oddeleni, pro ktere se specialiyuje
+     */
     public Nurse(int ID, String name, String lastName, Department dep) {
         this.ID = ID;
         this.name = name;
         this.lastName = lastName;
         this.dep = dep;
-
+        shifts = new LinkedList<>();
     }
 
-
+    /**
+     * Ziskani krestniho jmena
+     * @return krestni jmeno
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Ziskani prijmeni
+     * @return prijmeni
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Ziskani pracoviste - oddeleni sestry
+     * @return pracoviste
+     */
     public Department getDep() {
         return dep;
     }
 
+    /**
+     * Textovy vypis
+     * @return vypis
+     */
     @Override
     public String toString() {
-        return "Nurse{" +
+        return "Nurse: " +
                 "ID=" + ID +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", dep=" + dep.getName() +
-                '}';
+                ", dep=" + dep.getName();
     }
 }

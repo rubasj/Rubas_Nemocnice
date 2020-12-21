@@ -1,37 +1,56 @@
 package Data;
 
+import java.util.Date;
+
+/**
+ * Trida pro reprezentaci jednotlivych smen
+ * @author  Jan Rubas
+ * @version 1.0.2
+ */
 public class NurseShift {
-    public String nazev;
+
+    /**
+     * Typ smeny
+     */
+    public String typ;
+    /**
+     * Pocet hodin
+     */
     public int pocetHodin;
+    /**
+     * Zacatek
+     */
     public int startTime;
+    /**
+     * Konec
+     */
     public int endTime;
+    /**
+     * Zda byla smena pres pulnoc
+     */
     public boolean konecNasledujiciDen;
 
-    public NurseShift(String nazev, int pocetHodin, int startTime, int endTime, boolean konecNasledujiciDen) {
-        this.nazev = nazev;
+    /**
+     * Datum smeny
+     */
+    public Date date;
+
+    /**
+     * Konstruktor
+     * @param typ Typ smeny
+     * @param pocetHodin Pocet hodin k odpracovani
+     * @param startTime Zacatek smeny
+     * @param endTime Konec smeny
+     * @param konecNasledujiciDen zda se pracuje pres pulnoc
+     * @param date datum smeny
+     */
+    public NurseShift(String typ, int pocetHodin, int startTime, int endTime, boolean konecNasledujiciDen, Date date) {
+        this.date = date;
+        this.typ = typ;
         this.pocetHodin = pocetHodin;
         this.startTime = startTime;
         this.endTime = endTime;
         this.konecNasledujiciDen = konecNasledujiciDen;
     }
 
-    public String getNazev() {
-        return nazev;
-    }
-
-    public int getPocetHodin() {
-        return pocetHodin;
-    }
-
-    public int getStartTime() {
-        return startTime;
-    }
-
-    public int getEndTime() {
-        return endTime;
-    }
-
-    public boolean isKonecNasledujiciDen() {
-        return konecNasledujiciDen;
-    }
 }
