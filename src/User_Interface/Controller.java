@@ -10,8 +10,6 @@ import javafx.collections.ObservableList;
  */
 public class Controller {
 
-    ObservableList
-
     public Controller(){
         Shift_planner planovac = new Shift_planner();
     }
