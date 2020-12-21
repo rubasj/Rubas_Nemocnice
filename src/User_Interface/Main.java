@@ -1,6 +1,7 @@
 package User_Interface;
 
-import Inference.Shift_planner;
+import Inference.ShiftGenerator;
+import Inference.ShiftPlanner;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +17,7 @@ import Data.DataLoader;
  */
 public class Main extends Application {
 
-    public Shift_planner planovac = new Shift_planner();
+    public ShiftGenerator planovac = new ShiftGenerator();
 
     /**
      * Start GUI
@@ -38,8 +39,11 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         DataLoader dl = new DataLoader();
-
         dl.loadData();
+
+        ShiftPlanner sp = new ShiftPlanner();
+        sp.createPlan();
+
         launch(args);
     }
 

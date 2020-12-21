@@ -1,7 +1,6 @@
 package User_Interface;
 
-import Inference.Shift_planner;
-import javafx.collections.ObservableList;
+import Inference.ShiftGenerator;
 
 /**
  * Trida reprezentujici ovladani GUI
@@ -11,6 +10,6 @@ import javafx.collections.ObservableList;
 public class Controller {
 
     public Controller(){
-        Shift_planner planovac = new Shift_planner();
+        ShiftGenerator planovac = new ShiftGenerator();
     }
 }

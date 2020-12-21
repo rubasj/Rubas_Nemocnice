@@ -35,6 +35,7 @@ public class DataLoader {
     public void loadData(){
         readDepartments();
         readNurses();
+        System.out.println(departments);
     }
 
     /**
@@ -59,8 +60,16 @@ public class DataLoader {
                     System.out.println(new Department(Integer.parseInt(values[1]), values[2], Integer.parseInt(values[3])));
                 }
                 else if(values.length == 5){ // pocet parametru instance Nurse
-                    nurses.add(new Nurse(Integer.parseInt(values[1]), values[2], values[3], findDepartment(values[4])));
-                    System.out.println(new Nurse(Integer.parseInt(values[1]), values[2], values[3], findDepartment(values[4])));
+                    Nurse nrs = new Nurse(Integer.parseInt(values[1]), values[2], values[3], findDepartment(values[4]));
+                    nurses.add(nrs);
+                    for (Department d:
+                            departments
+                         ) {
+                        if (d.getID() == nrs.getDep().getID())
+                            d.addToQueue(nrs);                  // zarazeni zdravotni sestry na konkretni oddeleni
+                    }
+
+                    System.out.println(nrs);
                 }
             }
         } catch (IOException e) {
@@ -79,6 +88,8 @@ public class DataLoader {
                 return  d;
             }
         }
+        System.err.println("CHYBA PRI NACITANI DAT");
+        System.exit(-1);
         return new Department(0, "Chyba nacteni Oddeleni", 100); // pokud dojde k nejake chybe pri nacitani, i kdyz asi nedojde
     }
 

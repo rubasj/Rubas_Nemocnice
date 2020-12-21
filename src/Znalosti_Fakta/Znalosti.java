@@ -1,4 +1,4 @@
-package Data;
+package Znalosti_Fakta;
 
 /**
  * Trida s informacemi o nemocnici, jak funguji smeny, informace o oddeleni, sestrach atd.
