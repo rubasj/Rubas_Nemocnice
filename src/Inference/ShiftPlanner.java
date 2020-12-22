@@ -22,8 +22,10 @@ public class ShiftPlanner {
      * Metoda vytvori plan pro vsechna oddeleni
      */
     public void createPlan() {
-        departments.forEach(dep -> {
+        ShiftGenerator sg = new ShiftGenerator();
 
+        departments.forEach(dep -> {
+            System.out.println(dep.name);
             List<Nurse> nightShift = new LinkedList<>();
             List<Nurse> afternoonShift = new LinkedList<>();
             List<Nurse> morningShift = new LinkedList<>();
@@ -44,29 +46,32 @@ public class ShiftPlanner {
 
 
                 for (int i = 1; i <= dep.minCapacity; i++) {     //Ranni
-                    morningShift.add(dep.changePositionInQueue());
+                    morningShift.add(dep.moveFromQueue());
                 }
-                //TODO dodelat pridani smen
+
+                if (j <= 1)
+                System.out.println(dep.nurseQueue.size());
 
                 for (int i = 1; i <= dep.minCapacity; i++) {     //Odpoledni
                     if (nextMorningShift.size() == 0) {
-                        afternoonShift.add(dep.changePositionInQueue());
+                        afternoonShift.add(dep.moveFromQueue());
                     } else {
                         afternoonShift.addAll(nextMorningShift);
+                        nextMorningShift.clear();
                     }
                 }
-
-
 
                 for (int i = 1; i <= dep.minCapacity; i++) {     //Nocni
                     if (nextAfternoonShift.size() == 0) {
-                        afternoonShift.add(dep.changePositionInQueue());
+                        nightShift.add(dep.moveFromQueue());
                     } else {
                         nightShift.addAll(nextAfternoonShift);
+                        nextAfternoonShift.clear();
                     }
                 }
-
-
+                morningShift.forEach(nurse -> nurse.shifts.add(sg.generateMorningShift(date)));     // vygenerovani smen
+                nightShift.forEach(nurse -> nurse.shifts.add(sg.generateNightShift(date)));
+                afternoonShift.forEach(nurse -> nurse.shifts.add(sg.generateAfternoonShift(date)));
 
                 nextMorningShift.addAll(morningShift);
                 nextAfternoonShift.addAll(afternoonShift);

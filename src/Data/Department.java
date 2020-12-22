@@ -45,7 +45,7 @@ public class Department {
      * Metoda, ktera zmeni
      * @return Sestra vytahnuta z fronty
      */
-    public Nurse changePositionInQueue(){
+    public Nurse moveFromQueue(){
         Nurse nurse = nurseQueue.poll();
 
         return nurse;

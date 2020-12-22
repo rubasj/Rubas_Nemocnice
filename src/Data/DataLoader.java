@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Trida pro nacitani dat
  * @author Jan Rubáš
- * @version 1.2.0
+ * @version 1.2.1
  */
 public class DataLoader {
 
@@ -38,7 +38,7 @@ public class DataLoader {
         readNurses();
 
         departments.forEach(department -> {
-            if (department.nurseQueue.size() <= department.getMinCapacity() * Znalosti.MAX_POCET_SMEN * Znalosti.DNI_VOLNO_MIN){
+            if (department.nurseQueue.size() < department.getMinCapacity() * Znalosti.MAX_POCET_SMEN * Znalosti.DNI_VOLNO_MIN){
                 System.out.println("Nedostatek zdravotnich sester na oddělení " + department.getName() +
                         ".\n Bude docházet k přesčasům zdravotních sester podle pravidel nastavených v systému.");
 

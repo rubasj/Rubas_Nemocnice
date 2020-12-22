@@ -10,7 +10,8 @@ public class Znalosti {
     /** maximalni pocet smen za sebou */
     public static final int MAX_POCET_SMEN = 3;
     /** pocet dni volna */
-    public static final int DNI_VOLNO_MIN = 3;
+    public static final int DNI_VOLNO_MIN = 2;
+
 
 
     /** pocet hodin v nocni smene */

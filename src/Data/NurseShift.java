@@ -43,8 +43,9 @@ public class NurseShift {
      * @param endTime Konec smeny
      * @param konecNasledujiciDen zda se pracuje pres pulnoc
      * @param date datum smeny
+     * @param endDate datum konce
      */
-    public NurseShift(String typ, int pocetHodin, int startTime, int endTime, boolean konecNasledujiciDen, Date date) {
+    public NurseShift(String typ, int pocetHodin, int startTime, int endTime, boolean konecNasledujiciDen, Date date, Date endDate) {
         this.date = date;
         this.typ = typ;
         this.pocetHodin = pocetHodin;
