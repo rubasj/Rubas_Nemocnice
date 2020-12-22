@@ -8,9 +8,9 @@ package Znalosti_Fakta;
 public class Znalosti {
 
     /** maximalni pocet smen za sebou */
-    public final int MAX_POCET_SMEN = 3;
+    public static final int MAX_POCET_SMEN = 3;
     /** pocet dni volna */
-    public final int DNI_VOLNO_MIN = 3;
+    public static final int DNI_VOLNO_MIN = 3;
 
 
     /** pocet hodin v nocni smene */

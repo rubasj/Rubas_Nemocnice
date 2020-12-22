@@ -14,24 +14,6 @@ import java.util.List;
  */
 public class ShiftGenerator {
 
-    public List<Department> departments = DataLoader.departments;
-//    public List<Nurse> nurses = DataLoader.nurses;
-
-
-//    /**
-//     * Zaradi sestru do konkretniho oddeleni
-//     * @param nrs zdravotni sestra
-//     */
-//    public void addToQueue(Nurse nrs){
-//        for (Department dp:
-//                departments) {
-//            if (nrs.getDep().getID() == dp.getID()){
-//                dp.addToQueue(nrs);
-//            }
-//        }
-//
-//    }
-
     /**
      * Metoda vygeneruje odpoledni smenu, zjisti zda je datum vikend/pracovni den a podle toho nastavi hodiny
      * @param date datum smeny

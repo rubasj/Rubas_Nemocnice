@@ -10,7 +10,7 @@ import java.util.Queue;
  */
 public class Department {
 
-    private Queue<Nurse> nurseQueue = new LinkedList<>();
+    public Queue<Nurse> nurseQueue = new LinkedList<>();
 
     /** ID oddeleni **/
     public int id;
