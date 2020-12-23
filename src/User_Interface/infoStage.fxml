@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.InfoStageController">
+   <children>
+      <TextArea editable="false" layoutX="-3.0" layoutY="40.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="288.0" prefWidth="606.0" text="Uživatelské rozhraní k této aplikaci slouží pouze jako přehlednější zobrazovací modul.&#10;Nelze nijak měnit principy ovládání směn.&#10;Uživatel si pouze může přehledněji zobrazit výsledky, které tento program vygeneroval na základě dat.&#10;&#10;OVLÁDÁNÍ:&#10;Po kliknutí na položku v sekci &quot;Oddělení&quot; se ve vedlejší sekci zobrazí seznam zdravotních sester,&#10;které jsou oprávněné pracovat ve zvoleném oddělení.&#10;Po kliknutí na konkrétní zdravotní sestru se zobrazí přehled vygenerovaných směn pro rok 2021.&#10;&#10;Po dvojitém kliknutí na konkrétní položku jakéhokoli seznamu se zobrazí nové okno s detailním&#10;popisem položky.&#10;&#10;" />
+      <Button fx:id="cancelBT" layoutX="276.0" layoutY="350.0" mnemonicParsing="false" onAction="#closeWindow" text="Cancel" />
+   </children>
+</AnchorPane>

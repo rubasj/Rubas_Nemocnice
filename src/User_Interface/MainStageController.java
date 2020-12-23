@@ -6,22 +6,24 @@ import Data.Nurse;
 import Data.NurseShift;
 
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
+
 
 /**
  * Trida reprezentujici ovladani GUI
  * @author Jan Rubas
  * @version 1.0.
  */
-public class Controller {
+public class MainStageController {
 
 
     @FXML
@@ -64,14 +66,24 @@ public class Controller {
      */
     @FXML
     public void handleMouseClickDep(MouseEvent arg0) {
+        shiftLV.getItems().clear();
         nrsLV.getItems().removeAll(nrsLV.getItems());
         nrsLV.getItems().addAll(depLV.getSelectionModel().getSelectedItem().nurses);
     }
 
 
+    /**
+     * Ziskani informaci o ovladani programu.
+     * @param event po kliknuti
+     * @throws IOException vyhozeni vyjimky.
+     */
     @FXML
-    private void getInfo(ActionEvent event){
-
+    private void getInfo(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("infoStage.fxml"));
+        Stage infoStage = new Stage();
+        infoStage.setTitle("Informace");
+        infoStage.setScene(new Scene(root));
+        infoStage.show();
     }
 
     /**

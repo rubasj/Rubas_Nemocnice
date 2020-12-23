@@ -39,8 +39,7 @@ public class ShiftGenerator {
      * @return Smena
      */
     public NurseShift generateMorningShift(Date date) {
-        NurseShift shift = new NurseShift("Ranni", Znalosti.DENNI_SMENA, Znalosti.DENNI_SMENA_OD, Znalosti.DENNI_SMENA_DO, date, date);
-        return shift;
+        return new NurseShift("Ranni", Znalosti.DENNI_SMENA, Znalosti.DENNI_SMENA_OD, Znalosti.DENNI_SMENA_DO, date, date);
     }
 
     /**
@@ -52,8 +51,7 @@ public class ShiftGenerator {
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.add(Calendar.DAY_OF_MONTH, 1);
-        NurseShift shift = new NurseShift("Nocni", Znalosti.NOCNI_SMENA, Znalosti.NOCNI_SMENA_OD, Znalosti.NOCNI_SMENA_DO, date, c.getTime());
 
-        return shift;
+        return new NurseShift("Nocni", Znalosti.NOCNI_SMENA, Znalosti.NOCNI_SMENA_OD, Znalosti.NOCNI_SMENA_DO, date, c.getTime());
     }
 }

@@ -55,9 +55,7 @@ public class Department {
      * @return Sestra vytahnuta z fronty
      */
     public Nurse moveFromQueue(){
-        Nurse nurse = nurseQueue.poll();
-
-        return nurse;
+        return nurseQueue.poll();
     }
 
     /**

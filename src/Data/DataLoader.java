@@ -54,7 +54,7 @@ public class DataLoader {
 
     /**
      * Obecna metoda, ktera obsahuje nacteni jednotlivych souboru.
-     * @param filePath
+     * @param filePath cesta k souboru
      */
     private void loadFile(Path filePath) {
         try (BufferedReader br = Files.newBufferedReader(filePath.toAbsolutePath(),
