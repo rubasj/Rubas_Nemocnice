@@ -76,6 +76,6 @@ public class NurseShift {
         String endString = sdf.format(endDate);
         return "Směna:\t" + typ +"\n" +
                 "\tzačátek:\t" + startTime+":00 dne " + dateString + "\n" +
-                "\tkonec" + endTime + ":00 dne " + endString;
+                "\tkonec:\t" + endTime + ":00 dne " + endString;
     }
 }

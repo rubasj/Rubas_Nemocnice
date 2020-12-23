@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,21 +22,23 @@ import java.io.IOException;
 /**
  * Trida reprezentujici ovladani GUI
  * @author Jan Rubas
- * @version 1.0.
+ * @version 1.3.
  */
 public class MainStageController {
 
-
+    /** LV pro zdravotni sestry */
     @FXML
     private ListView<Nurse> nrsLV;
 
+    /** LV pro nemocnicni oddeleni */
     @FXML
     private ListView<Department> depLV;
 
+    /** LV pro smeny zdravotnich sester */
     @FXML
     private ListView<NurseShift> shiftLV;
 
-
+    /** Inicializace zakladnich dat. */
     public void initialize() {
         depLV.getItems().addAll(DataLoader.departments);
 
@@ -46,8 +49,18 @@ public class MainStageController {
      * @param arg0 parametr
      */
     @FXML
-    public void handleMouseClickShift(MouseEvent arg0) {
+    public void handleMouseClickShift(MouseEvent arg0) throws IOException {
+        if (arg0.getClickCount() == 2) {// Double click
 
+            Label secondLabel = new Label(shiftLV.getSelectionModel().getSelectedItem().getInfo());
+            StackPane secondaryLayout = new StackPane();
+            secondaryLayout.getChildren().add(secondLabel);
+            Scene secondScene = new Scene(secondaryLayout, 230, 100);
+            Stage infoStage = new Stage();
+            infoStage.setTitle(shiftLV.getSelectionModel().getSelectedItem().typ);
+            infoStage.setScene(secondScene);
+            infoStage.show();
+        }
     }
 
     /**
@@ -55,7 +68,17 @@ public class MainStageController {
      * @param arg0 parametr
      */
     @FXML
-    public void handleMouseClickNrs(MouseEvent arg0) {
+    public void handleMouseClickNrs(MouseEvent arg0) throws IOException {
+        if (arg0.getClickCount() == 2) {                                            // Double click
+            Label secondLabel = new Label(nrsLV.getSelectionModel().getSelectedItem().getInfo());
+            StackPane secondaryLayout = new StackPane();
+            secondaryLayout.getChildren().add(secondLabel);
+            Scene secondScene = new Scene(secondaryLayout, 230, 100);
+            Stage infoStage = new Stage();
+            infoStage.setTitle(nrsLV.getSelectionModel().getSelectedItem().toString());
+            infoStage.setScene(secondScene);
+            infoStage.show();
+        }
         shiftLV.getItems().removeAll(shiftLV.getItems());
         shiftLV.getItems().addAll(nrsLV.getSelectionModel().getSelectedItem().shifts);
     }
@@ -65,7 +88,17 @@ public class MainStageController {
      * @param arg0 parametr
      */
     @FXML
-    public void handleMouseClickDep(MouseEvent arg0) {
+    public void handleMouseClickDep(MouseEvent arg0) throws IOException {
+        if (arg0.getClickCount() == 2) {                                            // Double click
+            Label secondLabel = new Label(depLV.getSelectionModel().getSelectedItem().getInfo());
+            StackPane secondaryLayout = new StackPane();
+            secondaryLayout.getChildren().add(secondLabel);
+            Scene secondScene = new Scene(secondaryLayout, 230, 100);
+            Stage infoStage = new Stage();
+            infoStage.setTitle(depLV.getSelectionModel().getSelectedItem().getName());
+            infoStage.setScene(secondScene);
+            infoStage.show();
+        }
         shiftLV.getItems().clear();
         nrsLV.getItems().removeAll(nrsLV.getItems());
         nrsLV.getItems().addAll(depLV.getSelectionModel().getSelectedItem().nurses);
@@ -87,12 +120,15 @@ public class MainStageController {
     }
 
     /**
-     * ukonceni aplikace
+     * Ukonceni aplikace
      * @param event stisk tlacitka
      */
     @FXML
     public void closeApp(ActionEvent event){
         Platform.exit();
     }
+
+
+
 
 }

@@ -62,6 +62,15 @@ public class Nurse {
     }
 
     /**
+     * Kompletni info o zdravotni sestre
+     * @return
+     */
+    public String getInfo(){
+        return "Id: \t" + ID + "\n" +
+                "Jméno:\t" + this.toString() + "\n"
+                + "Specializace:\t" + getDep().name;
+    }
+    /**
      * Textovy vypis
      * @return vypis
      */

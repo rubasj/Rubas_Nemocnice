@@ -82,6 +82,17 @@ public class Department {
         return id;
     }
 
+
+    /**
+     * Kompletni info o oddeleni
+     * @return info
+     */
+    public String getInfo(){
+        return "Id: \t" + id + "\n" +
+                "Název:\t" + this.toString() + "\n"
+                + "Minimální kapacita v jednu chvíli:\t" + getMinCapacity() + " zdravotních sester";
+    }
+
     @Override
     public String toString() {
         return getName();
