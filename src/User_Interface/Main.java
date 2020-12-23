@@ -22,13 +22,13 @@ public class Main extends Application {
     /**
      * Start GUI
      * @param primaryStage primarni cast GUI
-     * @throws Exception
+     * @throws Exception vyjimka
      */
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource("mainStage.fxml"));
+        primaryStage.setTitle("Plánovač směn");
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 

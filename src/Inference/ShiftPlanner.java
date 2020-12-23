@@ -15,6 +15,9 @@ import java.util.*;
  */
 public class ShiftPlanner {
 
+    /**
+     * Seznam oddeleni
+     */
     public List<Department> departments = DataLoader.departments;
 
 
@@ -25,7 +28,6 @@ public class ShiftPlanner {
         ShiftGenerator sg = new ShiftGenerator();
 
         departments.forEach(dep -> {
-            System.out.println(dep.name);
             List<Nurse> nightShift = new LinkedList<>();
             List<Nurse> afternoonShift = new LinkedList<>();
             List<Nurse> morningShift = new LinkedList<>();
@@ -34,26 +36,24 @@ public class ShiftPlanner {
 
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
-            String dateInString = "01-01-2020";                                 //Prednastavene datum. Lze casem zmenit.
+            String dateInString = "31-12-2020";                                 //Prednastavene datum. Lze casem zmenit.
             try {
                 Date date = sdf.parse(dateInString);
 
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(date);
 
-            for (int j = 0; j <= 365; j++) {            // Nacitani dni
-                cal.add(Calendar.DATE, j);              // pridani dne
+            for (int j = 0; j < 365; j++) {            // Nacitani dni
+                cal.add(Calendar.DATE, 1);              // pridani dne
 
 
                 for (int i = 1; i <= dep.minCapacity; i++) {     //Ranni
                     morningShift.add(dep.moveFromQueue());
                 }
 
-                if (j <= 1)
-                System.out.println(dep.nurseQueue.size());
 
                 for (int i = 1; i <= dep.minCapacity; i++) {     //Odpoledni
-                    if (nextMorningShift.size() == 0) {
+                    if (j == 0) {
                         afternoonShift.add(dep.moveFromQueue());
                     } else {
                         afternoonShift.addAll(nextMorningShift);
@@ -62,16 +62,17 @@ public class ShiftPlanner {
                 }
 
                 for (int i = 1; i <= dep.minCapacity; i++) {     //Nocni
-                    if (nextAfternoonShift.size() == 0) {
+                    if (j == 0) {
                         nightShift.add(dep.moveFromQueue());
                     } else {
                         nightShift.addAll(nextAfternoonShift);
                         nextAfternoonShift.clear();
                     }
                 }
-                morningShift.forEach(nurse -> nurse.shifts.add(sg.generateMorningShift(date)));     // vygenerovani smen
-                nightShift.forEach(nurse -> nurse.shifts.add(sg.generateNightShift(date)));
-                afternoonShift.forEach(nurse -> nurse.shifts.add(sg.generateAfternoonShift(date)));
+
+                morningShift.forEach(nurse -> nurse.shifts.add(sg.generateMorningShift(cal.getTime())));     // vygenerovani smen
+                nightShift.forEach(nurse -> nurse.shifts.add(sg.generateNightShift(cal.getTime())));
+                afternoonShift.forEach(nurse -> nurse.shifts.add(sg.generateAfternoonShift(cal.getTime())));
 
                 nextMorningShift.addAll(morningShift);
                 nextAfternoonShift.addAll(afternoonShift);

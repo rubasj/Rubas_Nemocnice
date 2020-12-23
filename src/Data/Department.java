@@ -1,6 +1,7 @@
 package Data;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -10,6 +11,14 @@ import java.util.Queue;
  */
 public class Department {
 
+    /**
+     * Seznam zdravotnich sestricek.
+     */
+    public List<Nurse> nurses = new LinkedList<>();
+
+    /**
+     * Fronta zdravotnich sester, ktera bude zajistovat, aby za normalniho stavu nedochazelo k prescasum.
+     */
     public Queue<Nurse> nurseQueue = new LinkedList<>();
 
     /** ID oddeleni **/
@@ -77,11 +86,6 @@ public class Department {
 
     @Override
     public String toString() {
-        return "Department{" +
-                "nurseQueue=" + nurseQueue +
-                ", id=" + id +
-                ", name='" + name + '\'' +
-                ", minCapacity=" + minCapacity +
-                '}';
+        return getName();
     }
 }

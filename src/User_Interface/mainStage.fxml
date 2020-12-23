@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.Controller">
+   <children>
+      <GridPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="16.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="327.0" minHeight="10.0" prefHeight="324.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="143.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label prefHeight="34.0" prefWidth="189.0" text="Rozvrhovací systém">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font></Label>
+            <TitledPane animated="false" text="Oddělení" GridPane.rowIndex="1">
+              <content>
+                <AnchorPane>
+                     <children>
+                        <ListView fx:id="depLV" onMouseClicked="#handleMouseClickDep" prefHeight="301.0" prefWidth="194.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                        </ListView>
+                     </children></AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" prefHeight="344.0" prefWidth="219.0" text="Zdravotní sestry" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <content>
+                <AnchorPane>
+                     <opaqueInsets>
+                        <Insets left="5.0" right="5.0" />
+                     </opaqueInsets>
+<!--                     <children>-->
+                        <ListView fx:id="nrsLV" onMouseClicked="#handleMouseClickNrs" prefHeight="301.0" prefWidth="195.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                        </ListView>
+<!--                     </children>-->
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" prefHeight="357.0" prefWidth="197.0" text="Směny" GridPane.columnIndex="2" GridPane.rowIndex="1">
+<!--              <content>-->
+                <AnchorPane>
+                     <children>
+                        <ListView fx:id="shiftLV" onMouseClicked="#handleMouseClickShift" prefHeight="301.0" prefWidth="195.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                        </ListView>
+                     </children></AnchorPane>
+<!--              </content>-->
+            </TitledPane>
+            <Button mnemonicParsing="false" onAction="#getInfo" text="Info" GridPane.rowIndex="2" />
+            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#closeApp" text="Konec" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

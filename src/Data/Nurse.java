@@ -67,10 +67,6 @@ public class Nurse {
      */
     @Override
     public String toString() {
-        return "Nurse: " +
-                "ID=" + ID +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", dep=" + dep.getName();
+        return getLastName() + " " + getName();
     }
 }

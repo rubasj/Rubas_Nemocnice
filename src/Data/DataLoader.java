@@ -1,10 +1,8 @@
 package Data;
 
 import Znalosti_Fakta.Znalosti;
-import javafx.collections.ObservableList;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -23,12 +21,12 @@ public class DataLoader {
     /**
      * Seznam oddeleni
      */
-    public static List<Department> departments = new ArrayList<Department>();
+    public static List<Department> departments = new ArrayList();
 
     /**
      * Seznam sestricek
      */
-    public static List<Nurse> nurses = new ArrayList<Nurse>();
+    public static List<Nurse> nurses = new ArrayList();
 
     /**
      * Metoda pro nacteni dat, ktera je volana z GUI, popr Mainu
@@ -74,8 +72,11 @@ public class DataLoader {
                     for (Department d:
                             departments
                          ) {
-                        if (d.getID() == nrs.getDep().getID())
-                            d.addToQueue(nrs);                  // zarazeni zdravotni sestry na konkretni oddeleni
+                        if (d.getID() == nrs.getDep().getID()) {
+                            d.addToQueue(nrs);
+                            d.nurses.add(nrs);
+                        }
+                        // zarazeni zdravotni sestry na konkretni oddeleni
                     }
 
                     System.out.println(nrs);
