@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 /**
  * Ovladac okna pro zobrazeni informaci a ovladani aplikace.
  * @author Jan Rubas
+ * @email janrubas@students.zcu.cz
  * @version 1.0
  */
 public class InfoStageController {

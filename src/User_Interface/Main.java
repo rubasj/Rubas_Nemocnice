@@ -13,6 +13,7 @@ import Data.DataLoader;
 /**
  * Vychozi trida programu
  * @author Jan Rubas
+ * @email janrubas@students.zcu.cz
  * @version 1.0
  */
 public class Main extends Application {

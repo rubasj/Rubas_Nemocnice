@@ -6,6 +6,7 @@ import java.util.Date;
 /**
  * Trida pro reprezentaci jednotlivych smen
  * @author  Jan Rubas
+ * @email janrubas@students.zcu.cz
  * @version 1.0.2
  */
 public class NurseShift {

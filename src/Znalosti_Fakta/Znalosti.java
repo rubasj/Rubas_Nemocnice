@@ -3,6 +3,7 @@ package Znalosti_Fakta;
 /**
  * Trida s informacemi o nemocnici, jak funguji smeny, informace o oddeleni, sestrach atd.
  * @author Jan Rubas
+ * @email janrubas@students.zcu.cz
  * @version 1.0.1
  */
 public class Znalosti {

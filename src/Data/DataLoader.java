@@ -13,7 +13,8 @@ import java.util.List;
 
 /**
  * Trida pro nacitani dat
- * @author Jan Rubáš
+ * @author Jan Rubas
+ * @email janrubas@students.zcu.cz
  * @version 1.2.1
  */
 public class DataLoader {

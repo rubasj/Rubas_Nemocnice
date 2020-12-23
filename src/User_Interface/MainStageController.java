@@ -22,6 +22,7 @@ import java.io.IOException;
 /**
  * Trida reprezentujici ovladani GUI
  * @author Jan Rubas
+ * @email janrubas@students.zcu.cz
  * @version 1.3.
  */
 public class MainStageController {
@@ -55,7 +56,7 @@ public class MainStageController {
             Label secondLabel = new Label(shiftLV.getSelectionModel().getSelectedItem().getInfo());
             StackPane secondaryLayout = new StackPane();
             secondaryLayout.getChildren().add(secondLabel);
-            Scene secondScene = new Scene(secondaryLayout, 230, 100);
+            Scene secondScene = new Scene(secondaryLayout, 460, 200);
             Stage infoStage = new Stage();
             infoStage.setTitle(shiftLV.getSelectionModel().getSelectedItem().typ);
             infoStage.setScene(secondScene);
@@ -73,7 +74,7 @@ public class MainStageController {
             Label secondLabel = new Label(nrsLV.getSelectionModel().getSelectedItem().getInfo());
             StackPane secondaryLayout = new StackPane();
             secondaryLayout.getChildren().add(secondLabel);
-            Scene secondScene = new Scene(secondaryLayout, 230, 100);
+            Scene secondScene = new Scene(secondaryLayout, 460, 200);
             Stage infoStage = new Stage();
             infoStage.setTitle(nrsLV.getSelectionModel().getSelectedItem().toString());
             infoStage.setScene(secondScene);
@@ -93,7 +94,7 @@ public class MainStageController {
             Label secondLabel = new Label(depLV.getSelectionModel().getSelectedItem().getInfo());
             StackPane secondaryLayout = new StackPane();
             secondaryLayout.getChildren().add(secondLabel);
-            Scene secondScene = new Scene(secondaryLayout, 230, 100);
+            Scene secondScene = new Scene(secondaryLayout, 460, 200);
             Stage infoStage = new Stage();
             infoStage.setTitle(depLV.getSelectionModel().getSelectedItem().getName());
             infoStage.setScene(secondScene);

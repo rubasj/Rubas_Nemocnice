@@ -5,6 +5,7 @@ import java.util.LinkedList;
 /**
  * Trida pro reprezentaci zdravotni sestry
  * @author Jan Rubas
+ * @email janrubas@students.zcu.cz
  * @version 1.0
  */
 

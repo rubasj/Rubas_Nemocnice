@@ -7,6 +7,7 @@ import java.util.Queue;
 /**
  * Trida pro reprezentaci oddeleni v nemocnici
  * @author Jan Rubas
+ * @email janrubas@students.zcu.cz
  * @version 1.0
  */
 public class Department {

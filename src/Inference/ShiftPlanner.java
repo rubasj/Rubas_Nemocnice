@@ -11,6 +11,7 @@ import java.util.*;
 /**
  * Soubor s metodou, ktera postupne vytvari jednotlive instance smen podle prednstaveneho data.
  * @author Jan Rubas
+ * @email janrubas@students.zcu.cz
  * @version 1.0.
  */
 public class ShiftPlanner {

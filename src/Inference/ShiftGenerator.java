@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * Trida pro planovani smen
  * @author Jan Rubas
+ * @email janrubas@students.zcu.cz
  * @version 1.1.
  */
 public class ShiftGenerator {
